@@ -1,9 +1,6 @@
-import numpy as np 
 import pandas as pd 
-import matplotlib.pyplot as plt 
 from sklearn.linear_model import LinearRegression
-from sklearn.model_selection import train_test_split
-import fastapi as api 
+from sklearn.model_selection import train_test_split 
 import streamlit as st 
 db = pd.read_csv("Data/Housing_last.csv")
 db.head()
@@ -22,10 +19,10 @@ model.fit(X_train,y_train)
 st.title("House Price Prediction Model ")
 st.write("Enter the house detail and press the Predict buttonnnnn")
 
-area    = st.number_input("Area:")
-bedroom = st.number_input("Bedrooms:")
-bathroom = st.number_input("Batrhrooms:")
-guestroom = st.number_input("GuestRooms:")
+area    = st.number_input("Area(sq.feet):")
+bedroom = st.number_input("No Bedrooms:")
+bathroom = st.number_input("No Batrhrooms:")
+guestroom = st.number_input("No GuestRooms:")
 basement = st.number_input("Basement:")
 parking = st.number_input("Parking:")
 furnishingstatus = st.number_input("Furnising(0,1,2):")
